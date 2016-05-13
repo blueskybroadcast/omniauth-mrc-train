@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['bohdan@rubygarage.org']
   spec.summary       = %q{MRC Train SSO}
   spec.description   = %q{MRC Train SSO}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/blueskybroadcast/omniauth-mrc-train"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

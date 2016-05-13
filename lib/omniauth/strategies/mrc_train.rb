@@ -33,13 +33,13 @@ module OmniAuth
 
       def raw_user_info
         {
-          external_user_id: request.params['UserId'],
+          external_user_id: request.params['UserID'],
           first_name: request.params['Name'].try(:split, ',').try(:last),
           last_name: request.params['Name'].try(:split, ',').try(:first),
-          email: request.params['Email'],
-          uid: request.params['UserId'],
-          sellable_id: request.params['ProviderCourseId'],
-          external_product_id: request.params['TrainCourseId']
+          email: request.params['email'],
+          uid: request.params['UserID'],
+          sellable_id: request.params['ProviderCourseID'],
+          external_product_id: request.params['TrainCourseID']
         }
       end
 
