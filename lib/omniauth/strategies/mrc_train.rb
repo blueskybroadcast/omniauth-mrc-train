@@ -20,8 +20,13 @@ module OmniAuth
       end
 
       def callback_phase
+        slug = request.params['slug']
+        account = Account.find_by(slug: slug)
+        app_event = account.app_events.where(id: options.app_options.app_event_id).first_or_create(activity_type: 'sso')
+
         self.env['omniauth.auth'] = auth_hash
-        self.env['omniauth.origin'] = '/' + request.params['slug']
+        self.env['omniauth.origin'] = '/' + slug
+        self.env['omniauth.app_event_id'] = app_event.id
         call_app!
       end
 
